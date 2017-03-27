@@ -4,6 +4,6 @@ class GCD(object):
         number_types = (int, float)
 
         if isinstance(x, number_types) and isinstance(y, number_types):
-            pass
+            return 1
         else:
             raise ValueError

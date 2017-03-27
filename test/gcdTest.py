@@ -30,3 +30,9 @@ class GCDTest(unittest.TestCase):
 
     def test_gcd_raises_value_error_if_non_int_argument_passed_both(self):
         self.assertRaises(ValueError, self.gcd.calculate, 'one', 'two')
+
+    def test_gcd_returns_int(self):
+        self.assertIsInstance(self.gcd.calculate(1, 2), int)
+        self.assertIsInstance(self.gcd.calculate(4, 2), int)
+        self.assertIsInstance(self.gcd.calculate(15, 10), int)
+        self.assertIsInstance(self.gcd.calculate(42, 14), int)
