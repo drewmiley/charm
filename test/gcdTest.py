@@ -84,3 +84,25 @@ class GCDTest(unittest.TestCase):
 
     def test_gcd_returns_one_if_argument_is_one_both(self):
         self.assertEqual(self.gcd.calculate(1, 1), 1)
+
+    def test_gcd_returns_correct_value_for_two_non_negative_integers_not_coprime(self):
+        self.assertEqual(self.gcd.calculate(13, 169), 13)
+        self.assertEqual(self.gcd.calculate(169, 13), 13)
+        self.assertEqual(self.gcd.calculate(13, 13), 13)
+        self.assertEqual(self.gcd.calculate(6, 15), 3)
+        self.assertEqual(self.gcd.calculate(15, 6), 3)
+        self.assertEqual(self.gcd.calculate(8, 16), 8)
+        self.assertEqual(self.gcd.calculate(16, 8), 8)
+        self.assertEqual(self.gcd.calculate(42, 49), 7)
+        self.assertEqual(self.gcd.calculate(49, 42), 7)
+
+    def test_gcd_returns_correct_value_for_two_non_negative_integers_coprime(self):
+        self.assertEqual(self.gcd.calculate(12, 169), 1)
+        self.assertEqual(self.gcd.calculate(168, 13), 1)
+        self.assertEqual(self.gcd.calculate(12, 13), 1)
+        self.assertEqual(self.gcd.calculate(7, 15), 1)
+        self.assertEqual(self.gcd.calculate(13, 6), 1)
+        self.assertEqual(self.gcd.calculate(7, 16), 1)
+        self.assertEqual(self.gcd.calculate(15, 8), 1)
+        self.assertEqual(self.gcd.calculate(41, 49), 1)
+        self.assertEqual(self.gcd.calculate(47, 42), 1)
