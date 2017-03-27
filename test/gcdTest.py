@@ -54,3 +54,18 @@ class GCDTest(unittest.TestCase):
         self.assertIsNone(self.gcd.calculate(-4, -2))
         self.assertIsNone(self.gcd.calculate(-15, -10))
         self.assertIsNone(self.gcd.calculate(-42, -14))
+
+    def test_gcd_returns_zero_if_argument_is_zero_left(self):
+        self.assertEqual(self.gcd.calculate(0, 2), 0)
+        self.assertEqual(self.gcd.calculate(0, 3), 0)
+        self.assertEqual(self.gcd.calculate(0, 10), 0)
+        self.assertEqual(self.gcd.calculate(0, 14), 0)
+
+    def test_gcd_returns_zero_if_argument_is_zero_right(self):
+        self.assertEqual(self.gcd.calculate(1, 0), 0)
+        self.assertEqual(self.gcd.calculate(4, 0), 0)
+        self.assertEqual(self.gcd.calculate(15, 0), 0)
+        self.assertEqual(self.gcd.calculate(42, 0), 0)
+
+    def test_gcd_returns_zero_if_argument_is_zero_both(self):
+        self.assertEqual(self.gcd.calculate(0, 0), 0)
